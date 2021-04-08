@@ -1,5 +1,11 @@
+import { Container } from "react-bootstrap";
+
 const PageOne = () => {
-	return <h1>Page One</h1>;
+	return (
+		<Container>
+			<h1>Page One</h1>
+		</Container>
+	);
 };
 
 export default PageOne;

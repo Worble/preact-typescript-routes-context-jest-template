@@ -10,4 +10,5 @@ interface IRemoveProductAction {
 	payload: number;
 }
 
-export type ProductAction = IAddProductAction | IRemoveProductAction;
+type ProductAction = IAddProductAction | IRemoveProductAction;
+export default ProductAction;

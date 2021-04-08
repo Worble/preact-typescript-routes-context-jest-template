@@ -1,6 +1,6 @@
 import { Reducer } from "preact/hooks";
 import IProductState from "./IProductState";
-import { ProductAction } from "./productActions";
+import ProductAction from "./ProductAction";
 
 export const productReducer: Reducer<IProductState, ProductAction> = (state, action) => {
 	switch (action.type) {
@@ -10,11 +10,11 @@ export const productReducer: Reducer<IProductState, ProductAction> = (state, act
 				products: state.products.concat(action.payload),
 			};
 		case "REMOVE_PRODUCT":
-			var copy = state.products.slice();
-			copy.splice(action.payload, 1);
+			var products = state.products.slice();
+			products.splice(action.payload, 1);
 			return {
 				...state,
-				products: copy,
+				products: products,
 			};
 		default:
 			return state;

@@ -8,4 +8,5 @@ interface IUpdateAgeAction {
 	payload: number;
 }
 
-export type UserAction = IUpdateNameAction | IUpdateAgeAction;
+type UserAction = IUpdateNameAction | IUpdateAgeAction;
+export default UserAction;

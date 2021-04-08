@@ -1,6 +1,6 @@
 import { Reducer } from "preact/hooks";
 import IUserState from "./IUserState";
-import { UserAction } from "./userActions";
+import UserAction from "./UserAction";
 
 export const personReducer: Reducer<IUserState, UserAction> = (state, action) => {
 	switch (action.type) {

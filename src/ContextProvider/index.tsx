@@ -9,7 +9,7 @@ interface IContextProviderProps {
 	productState?: IProductState;
 }
 
-export const ContextProvider: FunctionComponent<IContextProviderProps> = (props) => {
+const ContextProvider: FunctionComponent<IContextProviderProps> = (props) => {
 	return (
 		<UserContextProvider userState={props.userState}>
 			<ProductContextProvider productState={props.productState}>

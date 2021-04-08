@@ -1,6 +1,7 @@
 import { UserContext, UserDispatchContext } from "ContextProvider/UserContext";
 import { useContext } from "preact/hooks";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
 const DisplayUser = () => {
@@ -49,18 +50,22 @@ const Home = () => {
 	return (
 		<>
 			<Jumbotron>
-				<h1>Hello, world!</h1>
-				<p>
-					This is a simple hero unit, a simple jumbotron-style component for calling extra
-					attention to featured content or information.
-				</p>
-				<p>
-					<Button variant="primary">Learn more</Button>
-				</p>
+				<Container>
+					<h1>Hello, world!</h1>
+					<p>
+						This is a simple hero unit, a simple jumbotron-style component for calling
+						extra attention to featured content or information.
+					</p>
+					<p>
+						<Button variant="primary">Learn more</Button>
+					</p>
+				</Container>
 			</Jumbotron>
-			<DisplayUser />
-			<ChangeName />
-			<ChangeAge />
+			<Container>
+				<DisplayUser />
+				<ChangeName />
+				<ChangeAge />
+			</Container>
 		</>
 	);
 };

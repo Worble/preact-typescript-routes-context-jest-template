@@ -1,20 +1,18 @@
 import { createContext, FunctionComponent } from "preact";
 import { useReducer } from "preact/hooks";
 import IProductState from "./IProductState";
-import { ProductAction } from "./productActions";
+import ProductAction from "./ProductAction";
 import { productReducer } from "./productReducer";
 
 const initialState: IProductState = {
 	products: [],
 };
 
-export const ProductContext = createContext(initialState);
+const ProductContext = createContext(initialState);
 
-export const ProductDispatchContext = createContext<(action: ProductAction) => void>(() => {});
+const ProductDispatchContext = createContext<(action: ProductAction) => void>(() => {});
 
-export const ProductContextProvider: FunctionComponent<{ productState?: IProductState }> = (
-	props
-) => {
+const ProductContextProvider: FunctionComponent<{ productState?: IProductState }> = (props) => {
 	const [state, dispatch] = useReducer(productReducer, props.productState ?? initialState);
 
 	return (
@@ -25,3 +23,5 @@ export const ProductContextProvider: FunctionComponent<{ productState?: IProduct
 		</ProductContext.Provider>
 	);
 };
+
+export { ProductContext, ProductDispatchContext, ProductContextProvider };

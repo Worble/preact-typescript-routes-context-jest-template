@@ -4,5 +4,5 @@ import "preact/debug";
 import "styles/style.scss";
 
 const el = document.createElement("div");
-document.body.append(el);
+document.body.appendChild(el);
 render(<App />, el);
